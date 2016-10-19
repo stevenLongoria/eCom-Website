@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Luminositech Catalogue – Collin Davis</title>
+    <title>Luminositech Catalogue â€“ Collin Davis</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -35,6 +35,9 @@
 ?>
 
 <!-- Page Content -->
+
+<?php include_once("analytics_tracking.php") ?>
+    <!--Google Analytics-->
     
     <div class="container">
     
