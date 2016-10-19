@@ -1,2 +1,34 @@
 # eCom-Website
-integrating eCommerce functionality into a previously designed website
+Integrating eCommerce Functionality Into a Previously Designed Website
+
+///////
+WRITING
+///////
+
+Ariel
+
+///////////
+CART SYSTEM
+///////////
+
+Jose
+Steven
+Collin
+
+//////////
+SEARCH BAR
+//////////
+
+Steven
+
+//////////////////////////
+ADMIN DATABASE INTEGRATION
+//////////////////////////
+
+Collin
+
+///////////////////////////////////
+USER ACCOUNTS DATABASE INTEGRATION
+//////////////////////////////////
+
+Collin
