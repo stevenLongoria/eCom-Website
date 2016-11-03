@@ -1,16 +1,4 @@
-<?php 
-ob_start(); 
-?>
-<?php 
-	include 'includes/header.php';
-	if(isset($_GET['querey'])){
-		header("Location: http://sulley.cah.ucf.edu/~dig4530c_012/steven_edits/search_results.php?query=".$_GET['querey']."");
-		ob_end_flush();
-		exit();
-	}
-?>
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -21,7 +9,7 @@ ob_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Luminositech Catalogue – Collin Davis</title>
+    <title>Luminositech | Search Results</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -42,35 +30,69 @@ ob_start();
 
 <body>
 
+<?php include 'includes/header.php';
 
+?>
+<?php
+	$username = "dig4530c_012";
+	$password = "knights123!";
+
+	$connection = mysql_connect("localhost" , "$username" , "$password");  //(host,username,password,) Connects to mysql server. Throws error if it cannot connect. 
+	mysql_select_db("dig4530c_012" , $connection);
+	
+	if(isset($_GET['query'])){
+		$query = $_GET['query'];
+		//-query  the database table 
+		$sql="SELECT * FROM products WHERE  product_name LIKE '%" . $query . "%' OR product_category LIKE '%" . $query  ."%'"; 
+		$result = mysql_fetch_assoc(mysql_query("$sql"));
+	} 
+?>
 <!-- Page Content -->
     
-    <div class="container">
+    <article class="container">
     
    
 
         <!-- Page Header -->
-        <div class="row">
-            <div class="col-lg-12">
+        <article class="row">
+            <article class="col-lg-12">
                 <h1 class="page-header">Products
-                    <small>All Products</small>
+                    <?php 
+						if(isset($_GET['query'])){
+							echo("<small>Search Results for '".$query."'</small>");
+						}
+					?>
                 </h1>
-            </div>
-        </div>
+            </article>
+        </article>
         <!-- /.row -->
 
         <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item">
-                <a href="#">
-                    <img class="img-responsive" src="img/product1.jpg" alt="">
-                </a>
+		<?php
+			//for($i=0; $i<$result.length; $i++){
+
+		?>
+        <article class="row">
+            <article class="col-md-4 portfolio-item">
+					<?php 
+						if(isset($_GET['query'])){
+							echo("<a href='#'><img class='img-responsive' src='".$result['product_img_url']."' alt='no result found'/></a>");
+						}
+					?>
                 <h3>
-                    <a href="#">Adobe Creative Cloud 1 Year License</a>
+                    <?php
+						if(isset($_GET['query'])){
+							echo("<a href='#'>".$result['product_name']."</a>");
+						}
+					?>
                 </h3>
-                <p>Creative Cloud provides the full library of adobe software for all of your artistic needs.  This suite includes Photoshop, Photoshop Lightroom, Illustrator, Acrobat, Dreamweaver, Fireworks, Flash, Muse, Edge, Extension Manager, ExtendScript Toolkit, Premiere Pro, After Effects, Scout, SpeedGrade, Digital Publishing Suite, Single Edition, InDesign, Prelude, and Audition.</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
+					<?php 
+						if(isset($_GET['query'])){
+							echo("<p>".$result['product_description']."</p>");
+						}
+					?>
+            </article>
+            <article class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="img/product2.jpg" alt="">
                 </a>
@@ -78,8 +100,8 @@ ob_start();
                     <a href="#">Autodesk Maya 2017</a>
                 </h3>
                 <p>Maya offers a wide renge of tools for 3D animation, rendering, modeling, simulation, and compositing.</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
+            </article>
+            <article class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="img/product3.jpg" alt="">
                 </a>
@@ -87,13 +109,13 @@ ob_start();
                     <a href="#">Pinnacle Studio 20 Ultimate</a>
                 </h3>
                 <p>Pinnacle Studio 20 Ultimate has the editing tools to take your videos to a professional levels.  Composite shots with Montage Themes and Chroma Key, stitch scenes together with split and merge, and make your videos come alive with Transitions and Effects.</p>
-            </div>
-        </div>
+            </article>
+        </article>
         <!-- /.row -->
 
         <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item">
+        <article class="row">
+            <article class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="img/product4.jpg" alt="">
                 </a>
@@ -101,8 +123,8 @@ ob_start();
                     <a href="#">Sony Vegas Pro</a>
                 </h3>
                 <p>Sony Vegas is a powerful video editing and processing software for Windows systems. Benefits from not requiring specific hardware to run.</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
+            </article>
+            <article class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="img/product5.jpg" alt="">
                 </a>
@@ -110,8 +132,8 @@ ob_start();
                     <a href="#">Adobe Lightroom </a>
                 </h3>
                 <p>Lightroom has the power to enhance your photos more than ever before - Punch up colors, make dull-looking shots vibrant, remove distracting objects and straighten skewed shots. Plus, the latest release includes powerful new ways to adjust atmospheric haze, create incredible HDR images and panoramas, import and edit faster, and so much more.</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
+            </article>
+            <article class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="img/product6.jpg" alt="">
                 </a>
@@ -119,12 +141,12 @@ ob_start();
                     <a href="#">Autodesk AutoCAD</a>
                 </h3>
                 <p>AutoCAD is a powerful computer aided design and drafting software used commercial and non-commercial engineering applications. </p>
-            </div>
-        </div>
+            </article>
+        </article>
 
         <!-- Projects Row -->
-        <div class="row">
-            <div class="col-md-4 portfolio-item">
+        <article class="row">
+            <article class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="img/product7.jpg" alt="">
                 </a>
@@ -132,8 +154,8 @@ ob_start();
                     <a href="#">Office Home & Business 2016</a>
                 </h3>
                 <p>All the essentials for home and small businesses are included such as Word, Excel, PowerPoint, OneNote, and Outlook. Installs on 1 system.</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
+            </article>
+            <article class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="img/product8.jpg" alt="">
                 </a>
@@ -141,8 +163,8 @@ ob_start();
                     <a href="#">Office Professional 2016</a>
                 </h3>
                 <p>Make work efficient with Office. Essential for users that only require Outlook, Publisher, and Access for one system.</p>
-            </div>
-            <div class="col-md-4 portfolio-item">
+            </article>
+            <article class="col-md-4 portfolio-item">
                 <a href="#">
                     <img class="img-responsive" src="img/product9.jpg" alt="">
                 </a>
@@ -150,13 +172,13 @@ ob_start();
                     <a href="#">Office Home & Student 2016 for Mac</a>
                 </h3>
                 <p>Fully install Office programs on your Mac, optimized user experience trhough tablets and phones, and 1TB of OneDrive cloud storage. Posses the power and flexibility to accomplish your work virtually anywhere.</p>
-            </div>
-        </div>
+            </article>
+        </article>
         <!-- /.row -->
 
         <!-- Pagination -->
-        <div class="row text-center">
-            <div class="col-lg-12">
+        <article class="row text-center">
+            <article class="col-lg-12">
                 <ul class="pagination">
                     <li>
                         <a href="#">&laquo;</a>
@@ -180,26 +202,27 @@ ob_start();
                         <a href="#">&raquo;</a>
                     </li>
                 </ul>
-            </div>
-        </div>
+            </article>
+        </article>
         <!-- /.row -->
 
-    </div>
+    </article>
 
-    <div class="container">
+
+    <article class="container">
 
         <hr>
 
         <!-- Footer -->
         <footer>
-            <div class="row">
-                <div class="col-lg-12">
+            <article class="row">
+                <article class="col-lg-12">
                     <p>Copyright &copy; Luminositech 2016 - This site is not official and is an assignment for a UCF Digital Media course</p>
-                </div>
-            </div>
+                </article>
+            </article>
         </footer>
 
-    </div>
+    </article>
     <!-- /.container -->
 
     <!-- jQuery -->
