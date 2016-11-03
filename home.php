@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Luminositech Home – Collin Davis</title>
+    <title>Luminositech Home â€“ Collin Davis</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -30,36 +30,12 @@
 
 <body>
 
-    <?php include 'includes/header.html';
-	
-	/*$username = "NAME HERE";
-	$password = "PASSWORD HERE!";
+<?php include 'includes/header.php';
 
-	$connection = mysql_connect("localhost" , "$username" , "$password") or die(mysql_error());  //(host,username,password,) Connects to mysql server. Throws error if it cannot connect. 
-	
-	$sql = 'SELECT productName, price, sku FROM products';
-	mysql_select_db("co324565" , $connection); //(nameOfDatabase , mysql connection variable)
-	$retval = mysql_query( $sql, $connection );
-	
-	
-	
-	if(! $retval ) {
-      die('Could not get data: ' . mysql_error());
-    }
-	
-	while($row = mysql_fetch_assoc($retval)) {
-      echo "NAME :{$row['productName']}  <br> ".
-         "PRICE : {$row['price']} <br> ".
-         "SKU : {$row['sku']} <br> ".
-         "--------------------------------<br>";
-   }
-   
-   echo "Fetched data successfully\n";
-   
-   mysql_close($connection);*/
-	
-	
 ?>
+
+<?php include_once("analytics_tracking.php") ?>
+    <!--Google Analytics-->
     
      <!-- Page Content -->
     <div class="container-fluid">
@@ -114,11 +90,11 @@
                 
                 <div class="col-md-8">
                 
-					<div class="panel panel-collapse panel-info">
-					<div class="row" id="featuredTitle">
-                		<h2>Featured Products</h2>
-                	</div>
-                	</div>
+                    <div class="panel panel-collapse panel-info">
+                    <div class="row" id="featuredTitle">
+                        <h2>Featured Products</h2>
+                    </div>
+                    </div>
                 
 
                     <div class="col-sm-4 col-lg-4 col-md-4">

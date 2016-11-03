@@ -1,16 +1,4 @@
-<?php 
-ob_start(); 
-?>
-<?php 
-	include 'includes/header.php';
-	if(isset($_GET['querey'])){
-		header("Location: http://sulley.cah.ucf.edu/~dig4530c_012/steven_edits/search_results.php?query=".$_GET['querey']."");
-		ob_end_flush();
-		exit();
-	}
-?>
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -21,7 +9,7 @@ ob_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Luminositech Catalogue – Collin Davis</title>
+    <title>Luminositech Catalogue â€“ Collin Davis</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -42,8 +30,14 @@ ob_start();
 
 <body>
 
+<?php include 'includes/header.php';
+
+?>
 
 <!-- Page Content -->
+
+<?php include_once("analytics_tracking.php") ?>
+    <!--Google Analytics-->
     
     <div class="container">
     

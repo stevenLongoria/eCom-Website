@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Luminositech Client – Collin Davis</title>
+    <title>Luminositech Client â€“ Collin Davis</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -30,40 +30,43 @@
 
 <body>
 
-    <?php include 'includes/header.html';
+    <?php include 'includes/header.php';
 
 ?>
+
+<?php include_once("analytics_tracking.php") ?>
+    <!--Google Analytics-->
 
 <br>
 
 <div class="container">
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="panel panel-info">
-				<div class="panel-heading">
-					<div class="panel-title">
-						<div class="row">
-							<div class="col-xs-6">
-								<h5><span class="glyphicon glyphicon-user"></span> User Information</h5>
-							</div>
-							<div class="col-xs-6">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <h5><span class="glyphicon glyphicon-user"></span> User Information</h5>
+                            </div>
+                            <div class="col-xs-6">
                             
                                 <div id="continueShopping">
                                   <a class="btn btn-primary btn-sm btn-block" href="#">Settings</a>
                                 </div>
                                 
-							</div>
-						</div>
-					</div>
-				</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-				<div class="panel-body">
+                <div class="panel-body">
                 
                 <h2>User Information</h2><br>
                 
                 <div class="col-lg-12">
                 
-                	<div class="row">
+                    <div class="row">
                                 <div class="col-xs-4 text-left">
                                     <h4>Name</h4>
                                 </div>
@@ -115,58 +118,58 @@
                 
                 <h2>Past Purchases</h2><br>
                 
-					<div class="row">
-						<div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70" alt="">
-						</div>
-						<div class="col-xs-4">
-							<h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
-						</div>
-						<div class="col-xs-6">
-							<div class="col-xs-10 text-right">
-								<h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
-							</div>
-							<div class="col-xs-2">
-								<h6>2</h6>
-							</div>
-							
-						</div>
-					</div>
-                    
-					<hr>
-					
                     <div class="row">
-						<div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70" alt="">
-						</div>
-						<div class="col-xs-4">
-							<h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
-						</div>
-						<div class="col-xs-6">
-							<div class="col-xs-10 text-right">
-								<h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
-							</div>
-							<div class="col-xs-2">
-								<h6>2</h6>
-							</div>
-						</div>
-					</div>
+                        <div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70" alt="">
+                        </div>
+                        <div class="col-xs-4">
+                            <h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="col-xs-10 text-right">
+                                <h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
+                            </div>
+                            <div class="col-xs-2">
+                                <h6>2</h6>
+                            </div>
+                            
+                        </div>
+                    </div>
                     
                     <hr>
                     
                     <div class="row">
-						<div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70" alt="">
-						</div>
-						<div class="col-xs-4">
-							<h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
-						</div>
-						<div class="col-xs-6">
-							<div class="col-xs-10 text-right">
-								<h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
-							</div>
-							<div class="col-xs-2">
-								<h6>2</h6>
-							</div>
-						</div>
-					</div>
+                        <div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70" alt="">
+                        </div>
+                        <div class="col-xs-4">
+                            <h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="col-xs-10 text-right">
+                                <h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
+                            </div>
+                            <div class="col-xs-2">
+                                <h6>2</h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="row">
+                        <div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70" alt="">
+                        </div>
+                        <div class="col-xs-4">
+                            <h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="col-xs-10 text-right">
+                                <h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
+                            </div>
+                            <div class="col-xs-2">
+                                <h6>2</h6>
+                            </div>
+                        </div>
+                    </div>
                     
                     <hr>
                     
@@ -184,7 +187,7 @@
                     
                     
 
- 	<div class="container">
+     <div class="container">
 
         <hr>
 
