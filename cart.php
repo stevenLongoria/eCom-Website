@@ -34,7 +34,7 @@
 
 ?>
 
-<?php include_once("analytics_tracking.php") ?>
+<?php include_once("includes/analytics_tracking.php") ?>
     <!--Google Analytics-->
 
 <br>

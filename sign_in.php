@@ -62,10 +62,10 @@
                               <div class="row">
                                   <div class="col-xs-6">
                                       <div class="well">
-                                          <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                                          <form id="loginForm" method="POST" action="includes/login.php" novalidate="novalidate">
                                               <div class="form-group">
                                                   <label for="username" class="control-label">Username</label>
-                                                  <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+                                                  <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="noname@example.com">
                                                   <span class="help-block"></span>
                                               </div>
                                               <div class="form-group">
@@ -113,7 +113,7 @@
                 <div class="col-lg-12">
                     <p>Copyright &copy; Luminositech 2016 - This site is not official and is an assignment for a UCF Digital Media course</p>
 					<?php echo("<h1>".$_SESSION['access_level']."</h1>");?>
-				</div>
+                </div>
             </div>
         </footer>
 
