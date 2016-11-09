@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Luminositech Client â€“ Collin Davis</title>
+    <title>My Luminositec</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -195,7 +195,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p>Copyright &copy; Luminositech 2016 - This site is not official and is an assignment for a UCF Digital Media course</p>
-					<?php echo("<h1>".$_SESSION['access_level']."</h1>");?>
                 </div>
             </div>
         </footer>

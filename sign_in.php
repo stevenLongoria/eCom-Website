@@ -112,7 +112,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p>Copyright &copy; Luminositech 2016 - This site is not official and is an assignment for a UCF Digital Media course</p>
-					<?php echo("<h1>".$_SESSION['access_level']."</h1>");?>
                 </div>
             </div>
         </footer>
