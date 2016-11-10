@@ -39,8 +39,16 @@
 <div class="container">
 
 <a href="admin.php?product_insert">Insert Products</a>
+<a href="admin.php?product_edit">Edit Products</a>
+<a href="admin.php?product_delete">Delete Products</a>
+<a href="admin.php?product_view">View Orders</a>
+<a href="admin.php?order_edit">Edit Orders</a>
+
+<?php if(isset($_GET['product_edit']));
+
+include("product_edit.php");
 	
-    
+    ?>
     
 </div><!--END CONTAINER-->
                     
