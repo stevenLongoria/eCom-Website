@@ -30,25 +30,45 @@
 
 <body>
 
-    <?php include 'includes/header.php';
+<?php include 'includes/header.php';
 
 ?>
 
-<br>
-
 <div class="container">
 
-<a href="admin.php?product_insert">Insert Products</a>
-<a href="admin.php?product_edit">Edit Products</a>
-<a href="admin.php?product_delete">Delete Products</a>
-<a href="admin.php?product_view">View Orders</a>
-<a href="admin.php?order_edit">Edit Orders</a>
+    <div class="row col-lg-12">
+    
+    <a href="admin_panel.php?product_insert">Insert Products</a>
+    <a href="admin_panel.php?product_delete">Delete Products</a>
+    <a href="admin_panel.php?product_view">View Orders</a>
+    
+    </div><!--END ROW TOP-->
+    
+<div class="row col-lg-12">
 
-<?php if(isset($_GET['product_edit']));
+<?php 
 
-include("product_edit.php");
+if(isset($_GET['product_insert'])){
+
+	include("product_insert.php");
+
+}
+	
+if(isset($_GET['product_view'])){
+
+	include("product_view.php");
+
+}
+
+if(isset($_GET['product_edit'])){
+
+	include("product_edit.php");
+	
+}
 	
     ?>
+    
+    </div> <!-- END ROW BOTTOM-->
     
 </div><!--END CONTAINER-->
                     
