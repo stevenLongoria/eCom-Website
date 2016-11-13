@@ -46,7 +46,7 @@
               <td><img src="<?php echo $product_image; ?>" width="60" height="60" /></td>
               <td><?php echo $product_price; ?></td>
               <td><a href="admin_panel.php?product_edit=<?php echo $product_id; ?>">Edit</a></td>
-              <td><a href="admin_panel.php?product_delete=<?php echo $product_id; ?>">Delete</a></td>
+              <td><a href="product_delete.php?product_delete=<?php echo $product_id; ?>">Delete</a></td>
             </tr>
             
             <?php } ?>
