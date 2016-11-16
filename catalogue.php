@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Luminositech Catalogue – Collin Davis</title>
+    <title>Luminositech Catalogue â€“ Collin Davis</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -30,15 +30,59 @@
 
 <body>
 
-<?php include 'includes/header.html';
+<?php include 'includes/header.php';
+
+	include 'includes/db_connect.php';
+	
+	
+
 
 ?>
 
 <!-- Page Content -->
+
+<?php include_once("includes/analytics_tracking.php") ?>
+    <!--Google Analytics-->
     
     <div class="container">
     
-   
+   <div class="container">
+       <div class="row">
+           <div class="col-lg-12">
+                <h1>Products</h1>
+                <a href="view_cart.php" class="cart-link" title="View Cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
+                <div id="products" class="row list-group">
+                    <?php
+                    
+                    
+                    //get rows query
+                    $query = $db->query("SELECT * FROM products ORDER BY product_id DESC LIMIT 10");
+                    if($query['num_rows'] > 0){ 
+                        while($row = $query->fetch_assoc()){
+                    ?>
+                    <div class="item col-lg-4">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <h4 class="list-group-item-heading"><?php echo $row["product_name"]; ?></h4>
+                                <p class="list-group-item-text"><?php echo $row["product_description"]; ?></p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="lead"><?php echo '$'.$row["product_price"].' USD'; ?></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a class="btn btn-success" href="cart_action.php?action=addToCart&id=<?php echo $row["id"]; ?>">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } }else{ ?>
+                    <p>Product(s) not found.....</p>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
 
         <!-- Page Header -->
         <div class="row">
@@ -176,6 +220,8 @@
         <!-- /.row -->
 
     </div>
+    
+    
 
     <div class="container">
 
